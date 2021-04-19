@@ -9,6 +9,7 @@
   "author": "Snehomoy Maitra",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.0",
     "validator": "^13.5.2"
   }
 }
