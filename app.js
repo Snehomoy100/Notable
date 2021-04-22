@@ -1,24 +1,14 @@
 const chalk = require('chalk');
-
 const validator = require('validator');
+const yargs = require('yargs');
 
-// const add = require('./utils');
+// Command line arguement using process.argv
 
-const getNotes = require('./notes');
 
-// const sum = add(3, 86);
+console.log(process.argv);
 
-const msg = getNotes();
 
-console.log(msg);
 
-console.log(validator.isEmail('name@example.com'));
-
-console.log(validator.isURL('https:/ok.com'));
-
-const greenMsg = chalk.red.bold.italic.inverse('Error!');
-
-console.log(greenMsg);
 
 
 
