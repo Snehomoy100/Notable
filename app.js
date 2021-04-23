@@ -9,6 +9,7 @@ const yargs = require('yargs');
 // add, remove, read & list all the notes.
 
 yargs.command({
+
     command: 'add',
     describe: 'Add a note',
     builder: {
