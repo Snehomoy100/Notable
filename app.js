@@ -1,6 +1,10 @@
 const chalk = require('chalk');
 const validator = require('validator');
+const { argv } = require('yargs');
 const yargs = require('yargs');
+
+const notes = require('./notes');
+
 
 // Command line arguement using process.argv
 
@@ -24,9 +28,8 @@ yargs.command({
           type: 'string'
       }  
     },
-    handler: function (args) {
-        console.log('Title = ' + args.title);
-        console.log('Body = ' + args.body);
+    handler: function (argv) {
+        notes.addNotes(argv.title, argv.body)
     }
 });
 
@@ -36,8 +39,15 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove a note',
-    handler: function () {
-        console.log('Removing a note!')
+    builder: {
+        title:{
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function (argv) {
+        notes.removeNotes(argv.title)
     }
 });
 
