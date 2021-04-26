@@ -32,6 +32,7 @@ yargs.command({
 
 // Create remove functionality
 
+
 yargs.command({
     command: 'remove',
     describe: 'Remove a note',
