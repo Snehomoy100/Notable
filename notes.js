@@ -38,6 +38,8 @@ const addNotes = function (title, body) {
 
 const removeNotes = function (title) {
 
+    // remove note functionality
+    
     const notes = loadNotes();
 
     const notesTokeep = notes.filter(function (note) {
