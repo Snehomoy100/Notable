@@ -19,10 +19,10 @@ const myEvent = {
         console.log("Guests are coming in my " + this.name + '.');
 
         this.guestList.forEach((guest) => {
+            
             console.log(guest + " is attending the " + this.name);
         })
     }
-
 
 };
 

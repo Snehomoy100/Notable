@@ -2,16 +2,16 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 
-const getNotes = function () {
+const getNotes = () => {
     return("Your all the notes are here...");
 }
 
-const addNotes = function (title, body) {
+const addNotes = (title, body) => {
     // add notes functionality
 
     const notes = loadNotes();
 
-    const duplicateNotes = notes.filter(function (note) {
+    const duplicateNotes = notes.filter((note) => {
         return note.title === title;
     })
     
@@ -23,10 +23,10 @@ const addNotes = function (title, body) {
     
         saveNotes(notes);
 
-        console.log("Note Successfully Added!")
+        console.log(chalk.green.bold.inverse("Note Successfully Added!"))
 
     } else {
-        console.log("Note title already exists");
+        console.log(chalk.red.bold.inverse("Note title already exists"));
     }
 
 
@@ -36,13 +36,13 @@ const addNotes = function (title, body) {
 
 
 
-const removeNotes = function (title) {
+const removeNotes = (title) => {
 
     // remove note functionality
     
     const notes = loadNotes();
 
-    const notesTokeep = notes.filter(function (note) {
+    const notesTokeep = notes.filter((note) => {
         return note.title !== title;
     })
 
@@ -61,12 +61,13 @@ const removeNotes = function (title) {
 
 
 
-const saveNotes = function (notes) {
+const saveNotes = (notes) => {
     const dataJson = JSON.stringify(notes);
     fs.writeFileSync('notes.json', dataJson);
 }
 
-const loadNotes = function () {
+
+const loadNotes = () => {
     try {
         const dataBuffer = fs.readFileSync('notes.json');
         const dataJson = dataBuffer.toString();
