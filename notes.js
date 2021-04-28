@@ -61,6 +61,8 @@ const removeNotes = (title) => {
 
 const listNotes = () => {
 
+    // list down all the notes
+
     const notes = loadNotes();
 
     console.log(chalk.white.bold.inverse('Your notes '));
@@ -72,9 +74,16 @@ const listNotes = () => {
 }
 
 
-const readNotes = () => {
+const readNotes = (title) => {
+   
+    // read a specific note with the mentioned title
+
+    const notes = loadNotes();
+
+    console.log("Read Note!");
 
 }
+
 
 
 const saveNotes = (notes) => {
