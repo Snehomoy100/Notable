@@ -6,6 +6,7 @@ const getNotes = () => {
     return("Your all the notes are here...");
 }
 
+
 const addNotes = (title, body) => {
     // add notes functionality
 
@@ -80,5 +81,5 @@ const loadNotes = () => {
 module.exports = {
     getNotes: getNotes,
     addNotes: addNotes,
-    removeNotes: removeNotes
+    removeNotes: removeNotes,
 };
