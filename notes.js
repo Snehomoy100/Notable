@@ -59,7 +59,9 @@ const removeNotes = (title) => {
     // console.log(title);
 }
 
-
+const listNotes = (notes) => {
+    
+}
 
 
 const saveNotes = (notes) => {
