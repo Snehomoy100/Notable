@@ -8,12 +8,14 @@ const getNotes = () => {
 }
 
 
+    
+
 const addNotes = (title, body) => {
 
     // add notes functionality
 
     const notes = loadNotes();
-    
+
     // const duplicateNotes = notes.filter((note) => {
     //     return note.title === title;
     // }) [less optimised]
@@ -21,7 +23,6 @@ const addNotes = (title, body) => {
 
     const duplicateNote = notes.find((note) => note.title === title);
     // using find method to make the task more optimised.
-
 
     if(duplicateNote === undefined){
         notes.push({
