@@ -29,10 +29,13 @@ const addNotes = (title, body) => {
     
         saveNotes(notes);
 
+        console.log("\n");
         console.log(chalk.green.bold.inverse("Note Successfully Added!"))
-
+        console.log("\n");
     } else {
+        console.log("\n");
         console.log(chalk.red.bold.inverse("Note title already exists"));
+        console.log("\n");
     }
 
 
@@ -54,11 +57,15 @@ const removeNotes = (title) => {
 
     if (notes.length > notesTokeep.length) {
 
+        console.log("\n");
         console.log(chalk.green.inverse.bold("Note deleted!"));
+        console.log("\n");
         saveNotes(notesTokeep);
 
     } else {
+        console.log("\n");
         console.log(chalk.red.inverse.bold("Nothing to delete!"));
+        console.log("\n");
     }
 
     // console.log(title);
@@ -73,7 +80,9 @@ const listNotes = () => {
 
     const notes = loadNotes();
 
-    console.log(chalk.white.bold.inverse('Your notes '));
+    console.log("\n");
+    console.log(chalk.cyan.bold.inverse('Your notes '));
+    console.log("\n");
 
     notes.forEach((note) => {
         console.log(note.title);
@@ -90,7 +99,25 @@ const readNotes = (title) => {
 
     const notes = loadNotes();
 
-    console.log("Read Note!");
+    const noteToread = notes.find((note) => note.title === title);
+
+    if (noteToread) {
+
+        console.log("\n");
+        console.log(chalk.blue.bold.inverse("Title: " + noteToread.title));
+        console.log("\n");
+        console.log(chalk.white.bold.inverse("Body: " + noteToread.body));
+        console.log("\n");
+
+    } else {
+
+        console.log("\n");
+        console.log(chalk.red.bold.inverse("Nothing to read, title doesn't exist but feel free to create one!"));
+        console.log("\n");
+
+    }
+
+    // console.log("Read Note!");
 
 }
 
@@ -98,12 +125,19 @@ const readNotes = (title) => {
 
 
 const saveNotes = (notes) => {
+
+    // to save the note if it's note being created.
+
     const dataJson = JSON.stringify(notes);
     fs.writeFileSync('notes.json', dataJson);
+    
 }
 
 
 const loadNotes = () => {
+
+    // load all the notes.
+
     try {
         const dataBuffer = fs.readFileSync('notes.json');
         const dataJson = dataBuffer.toString();
