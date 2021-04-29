@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 
+// all the data is being saved inside of the notes.json file.
 
 // const validator = require('validator');
 
