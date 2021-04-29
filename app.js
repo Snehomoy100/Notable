@@ -1,9 +1,15 @@
 const chalk = require('chalk');
-const validator = require('validator');
+
+
+// const validator = require('validator');
+
+
 const { argv } = require('yargs');
+
 const yargs = require('yargs');
 
 const notes = require('./notes');
+
 
 
 // Command line arguement using process.argv
