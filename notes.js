@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const chalk = require('chalk');
 
 
@@ -12,6 +13,7 @@ const addNotes = (title, body) => {
     // add notes functionality
 
     const notes = loadNotes();
+    
     // const duplicateNotes = notes.filter((note) => {
     //     return note.title === title;
     // }) [less optimised]
@@ -130,7 +132,7 @@ const saveNotes = (notes) => {
 
     const dataJson = JSON.stringify(notes);
     fs.writeFileSync('notes.json', dataJson);
-    
+
 }
 
 

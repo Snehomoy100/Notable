@@ -1,10 +1,5 @@
 const chalk = require('chalk');
 
-// all the data is being saved inside of the notes.json file.
-
-// const validator = require('validator');
-
-
 const { argv } = require('yargs');
 
 const yargs = require('yargs');
@@ -13,11 +8,14 @@ const notes = require('./notes');
 
 
 
+// all the data is being saved inside of the notes.json file.
+
 // Command line arguement using process.argv
 
 // Create add functionality
 
 // add, remove, read & list all the notes.
+
 
 yargs.command({
 
