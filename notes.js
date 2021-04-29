@@ -8,15 +8,20 @@ const getNotes = () => {
 
 
 const addNotes = (title, body) => {
+
     // add notes functionality
 
     const notes = loadNotes();
+    // const duplicateNotes = notes.filter((note) => {
+    //     return note.title === title;
+    // }) [less optimised]
 
-    const duplicateNotes = notes.filter((note) => {
-        return note.title === title;
-    })
-    
-    if(duplicateNotes.length === 0){
+
+    const duplicateNote = notes.find((note) => note.title === title);
+    // using find method to make the task more optimised.
+
+
+    if(duplicateNote === undefined){
         notes.push({
             title: title,
             body: body
@@ -59,6 +64,9 @@ const removeNotes = (title) => {
     // console.log(title);
 }
 
+
+
+
 const listNotes = () => {
 
     // list down all the notes
@@ -74,6 +82,8 @@ const listNotes = () => {
 }
 
 
+
+
 const readNotes = (title) => {
    
     // read a specific note with the mentioned title
@@ -83,6 +93,7 @@ const readNotes = (title) => {
     console.log("Read Note!");
 
 }
+
 
 
 
@@ -101,6 +112,8 @@ const loadNotes = () => {
         return [];
     }
 };
+
+
 
 module.exports = {
     getNotes: getNotes,
