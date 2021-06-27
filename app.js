@@ -7,7 +7,6 @@ const yargs = require('yargs');
 const notes = require('./notes');
 
 
-
 // all the data is being saved inside of the notes.json file.
 
 // Command line arguement using process.argv
